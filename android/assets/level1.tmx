@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="240" height="13" tilewidth="16" tileheight="16" nextobjectid="42">
+ <tileset firstgid="1" name="marioatlas" tilewidth="16" tileheight="16" tilecount="924" columns="33">
+  <image source="marioatlas.png" width="528" height="448"/>
+ </tileset>
+ <layer name="background" width="240" height="13">
+  <data encoding="base64" compression="zlib">
+   eJztwzEJAAAMA7Ay/4bqrir2JZBeUlVVVVVVVVVVVVVV1ccDxULniQ==
+  </data>
+ </layer>
+ <layer name="graphics" width="240" height="13">
+  <data encoding="base64" compression="zlib">
+   eJzt2UEKwjAQheEZd271Fm6lCp7BnUvP0J23V8EIAYcxgbaEDOj/waOFhkm7eN1EBMAvuavII+WpbefNndn6PQB89O7X0v8AAAAAAAAA/sMpp/Ysam8AfdFFoJ9VzjVfrbWKnN15zqZyvuN7W+qxn2f39XsD+FbqZM0urRvN2ku636dsF57R+nkA5rEdGtL1YHLU+tp3d2+5v1M7PLi59BeYRgPSav/o7yD9UxL9TpF5AWI6G/M=
+  </data>
+ </layer>
+ <objectgroup name="ground">
+  <object id="8" x="9" y="200" width="1"/>
+  <object id="18" x="0" y="192" width="464" height="16"/>
+  <object id="22" x="512" y="192" width="240" height="16"/>
+  <object id="23" x="800" y="192" width="1949" height="16"/>
+  <object id="24" x="2832" y="192" width="1008" height="16"/>
+ </objectgroup>
+ <objectgroup name="pipes">
+  <object id="26" x="96" y="160" width="32" height="32"/>
+  <object id="28" x="272" y="144" width="32" height="48"/>
+  <object id="29" x="592" y="144" width="32" height="48"/>
+ </objectgroup>
+ <objectgroup name="coins">
+  <object id="36" x="176" y="112" width="32" height="16"/>
+  <object id="37" x="288" y="112" width="16" height="16"/>
+  <object id="38" x="448" y="144" width="16" height="16"/>
+  <object id="39" x="480" y="128" width="16" height="16"/>
+  <object id="40" x="512" y="144" width="16" height="16"/>
+  <object id="41" x="672" y="112" width="32" height="16"/>
+ </objectgroup>
+ <objectgroup name="bricks">
+  <object id="32" x="160" y="144" width="64" height="16"/>
+  <object id="33" x="656" y="144" width="64" height="16"/>
+ </objectgroup>
+</map>
