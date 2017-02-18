@@ -23,16 +23,16 @@ public abstract class InteractiveTileObject {
         this.bounds = bounds;
 
         BodyDef bdef = new BodyDef();
-        FixtureDef fdef = new FixtureDef();
-        PolygonShape shape = new PolygonShape();
-
         bdef.type = BodyDef.BodyType.StaticBody;
         bdef.position.set((bounds.getX() + bounds.getWidth() / 2) / MarioBros.PPM, (bounds.getY() + bounds.getHeight() / 2) / MarioBros.PPM);
-
         body = world.createBody(bdef);
 
+        PolygonShape shape = new PolygonShape();
         shape.setAsBox(bounds.getWidth() / 2 / MarioBros.PPM, bounds.getHeight() / 2 / MarioBros.PPM);
+
+        FixtureDef fdef = new FixtureDef();
         fdef.shape = shape;
         body.createFixture(fdef);
+
     }
 }
