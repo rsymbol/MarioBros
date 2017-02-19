@@ -18,6 +18,7 @@ import com.sol.mariobros.MarioBros;
 import com.sol.mariobros.scenes.Hud;
 import com.sol.mariobros.sprites.Mario;
 import com.sol.mariobros.tools.B2WorldCreator;
+import com.sol.mariobros.tools.WorldContactListener;
 
 public class PlayScreen implements Screen {
 
@@ -71,6 +72,8 @@ public class PlayScreen implements Screen {
 
         //create mario in our game world
         player = new Mario(world, this);
+
+        world.setContactListener(new WorldContactListener());
     }
 
     public TextureAtlas getAtlas() {
@@ -84,7 +87,7 @@ public class PlayScreen implements Screen {
 
     public void handleInput(float dt) {
         //if our user is holding down mouse move our camera through the game world
-        if (Gdx.input.isKeyJustPressed(Input.Keys.UP))
+        if (Gdx.input.isKeyJustPressed(Input.Keys.UP) && player.b2body.getLinearVelocity().y == 0)
             player.b2body.applyLinearImpulse(new Vector2(0, 4f), player.b2body.getWorldCenter(), true);
         if (Gdx.input.isKeyPressed(Input.Keys.RIGHT) && player.b2body.getLinearVelocity().x <= 2)
             player.b2body.applyLinearImpulse(new Vector2(0.1f, 0), player.b2body.getWorldCenter(), true);
@@ -99,6 +102,7 @@ public class PlayScreen implements Screen {
         //takes 1 step in the phisics simulation (60 times per second)
         world.step(1 / 60f, 6, 2);
         player.update(dt);
+        hud.update(dt);
 
         //attach our gamecam to our player.x coordinate
         gamecam.position.x = player.b2body.getPosition().x;
